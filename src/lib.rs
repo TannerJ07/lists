@@ -1,11 +1,7 @@
+#![allow(dead_code)]
+pub mod fifth;
 pub mod first;
+pub mod fourth;
 pub mod second;
-
-pub fn add(left: u64, right: u64) -> u64 {
-    left + right
-}
-
-#[cfg(test)]
-mod tests {
-    //use super::*;
-}
+pub mod third;
+pub mod link;

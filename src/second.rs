@@ -40,12 +40,12 @@ impl<'a, T> List<T> {
     pub fn peek_mut(&mut self) -> Option<&mut T> {
         self.head.as_mut().map(|node| &mut node.elem)
     }
-    pub fn iter(&'a self) -> Iter<'a, T> {
+    pub fn iter(&self) -> Iter<'_, T> {
         Iter {
             next: self.head.as_deref(),
         }
     }
-    pub fn iter_mut(&'a mut self) -> IterMut<'a, T> {
+    pub fn iter_mut(&mut self) -> IterMut<'_, T> {
         IterMut {
             next: self.head.as_deref_mut(),
         }
@@ -115,8 +115,6 @@ impl<'a, T> IntoIterator for &'a mut List<T> {
         }
     }
 }
-
-// in first.rs
 
 #[cfg(test)]
 mod test {
